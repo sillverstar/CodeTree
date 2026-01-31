@@ -7,11 +7,10 @@ public class Main {
         int b = sc.nextInt();
         int a = sc.nextInt();
 
-        if (a % 2 == 0) { a--; }
-        while (a >= b) {
-            System.out.printf("%d ", a);
-            a -= 2;
-
+        if (b % 2 == 1) { b--; }
+        while (b >= a) {
+            System.out.printf("%d ", b);
+            b -= 2;
         }
     }
 }
