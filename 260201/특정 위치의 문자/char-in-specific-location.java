@@ -5,24 +5,24 @@ public class Main {
         // Please write your code here.
         Scanner sc = new Scanner(System.in);
 
-        char[] arr = new char[6];
-
-        arr[0] = 'L';
-        arr[1] = 'E';
-        arr[2] = 'B';
-        arr[3] = 'R';
-        arr[4] = 'O';
-        arr[5] = 'S';
+        char[] arr = new char[] {'L', 'E', 'B', 'R', 'O', 'S'};
 
         char n = sc.next().charAt(0);
 
+        int idx = -1;
         for (int i = 0; i < 6; i++) {
             if (n == arr[i]) {
-                System.out.print(i);
-                return;
+                idx = i;
             }
         }
-        System.out.print("None");
+
+        if (idx == -1) {
+            System.out.print("None");
+        }
+        else {
+            System.out.print(idx);
+        }
+        
 
     }
 }
