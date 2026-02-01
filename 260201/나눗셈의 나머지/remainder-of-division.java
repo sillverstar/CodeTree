@@ -17,8 +17,6 @@ public class Main {
             a /= b;
         }
 
-
-        System.out.print(Arrays.toString(remain));
         int powsum = 0;
         for (int i = 0; i < b; i++) {
             powsum += Math.pow(remain[i], 2);
