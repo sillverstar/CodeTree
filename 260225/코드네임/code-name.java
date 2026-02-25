@@ -19,11 +19,9 @@ public class Main {
             arr[i] = new Agent(sc.next().charAt(0), sc.nextInt());
         }
 
-        int mingrade = 101;
-        int minIdx = -1;
+        int minIdx = 0;
         for (int i = 0; i < 5; i++) {
-            if (arr[i].grade < mingrade) {
-                mingrade = arr[i].grade;
+            if (arr[i].grade < arr[minIdx].grade) {
                 minIdx = i;
             }
         }
