@@ -24,24 +24,22 @@ public class Main {
         for (int i = 0;i < n2; i++) {
             b[i] = sc.nextInt();
         }
-        int cnt = 0;
+        
         for (int i = 0; i < n1; i++) { // 수열 A 순회
-            if (a[i] == b[0] && ((i + n2) < n1)) { // 수열 B의 첫 번째 값
+            boolean ans = true;
+            if (a[i] == b[0] && ((i + n2) <= n1)) { // 수열 B의 첫 번째 값
                 for (int j = 0; j < n2; j++) {
-                    if (a[i+j] == b[j]) {
-                        cnt++;
-                    } else {
-                        cnt = 0;
+                    if (a[i+j] != b[j]) {
+                        ans = false;
+                        break;
                     }
                 }
+                if (ans) {
+                    System.out.println("Yes");
+                    return;
+                } 
             }
         }
-
-        if (cnt == n2) {
-            System.out.println("Yes");
-        } else {
-            System.out.println("No");
-        }
-        
+        System.out.println("No");
     }
 }
