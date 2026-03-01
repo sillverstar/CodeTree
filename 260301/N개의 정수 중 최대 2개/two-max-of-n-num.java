@@ -24,7 +24,7 @@ public class Main {
                 maxVal2 = arr[i];
             }
         }
-        System.out.println(maxVal1 + " " + maxVal2);
+        System.out.println((maxVal1 > maxVal2)? maxVal1 + " " + maxVal2 : maxVal2 + " " + maxVal1);
         
     }
 }
