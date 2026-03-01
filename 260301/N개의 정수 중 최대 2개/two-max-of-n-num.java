@@ -13,18 +13,31 @@ public class Main {
             arr[i] = sc.nextInt();
         }
 
-        // 2. 탐색
-        int maxVal1 = arr[0];
-        int maxVal2 = arr[1];
+        // 2. 정렬 [maxVal1 < maxVal2]
+        int maxVal1, maxVal2;
+        if (arr[0] < arr[1]) {
+            maxVal1 = arr[0];
+            maxVal2 = arr[1];
+        } else {
+            maxVal1 = arr[1];
+            maxVal2 = arr[0];
+        }
         for (int i = 2; i < n; i++) {
-            if (arr[i] > maxVal1) {
-                maxVal1 = arr[i];
-            }
-            else if (arr[i] > maxVal2) {
+            // 다음 값의 위치 확인
+            // <----(1)----(maxVal1)----(2)----(maxVal2)----(3)---->
+            // (1): nope
+            // (2): maxVal1 <- new value, maxVal2 그대로
+            // (3): maxVal1 <- maxVal2, maxVal2 <- new value
+            // 3번부터 판단.
+            if (arr[i] > maxVal2) { // 가장 큰 값과 먼저 비교
+                maxVal1 = maxVal2;
                 maxVal2 = arr[i];
             }
+            else if (arr[i] > maxVal1) {
+                maxVal1 = arr[i];
+            }
         }
-        System.out.println((maxVal1 > maxVal2)? maxVal1 + " " + maxVal2 : maxVal2 + " " + maxVal1);
+        System.out.println(maxVal2 + " " + maxVal1);
         
     }
 }
