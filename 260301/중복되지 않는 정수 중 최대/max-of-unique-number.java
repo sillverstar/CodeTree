@@ -18,7 +18,7 @@ public class Main {
         // 3. maxValue;
         int maxValue = -1;
         boolean rep = false;
-        for (int i = n-1; i > 0; i--) {
+        for (int i = n-1; i >= 0; i--) {
             boolean left = ((i == 0) || arr[i-1] != arr[i])? true:false; // (i > 0) && -> (i == 0) ||: i가 0일 경우에는 왼쪽이 없어서 비교할 필요 없음. 무조건 true;
             boolean right = ((i == n-1) || arr[i] != arr[i+1])? true:false; // (i < n-1) && -> (i == n-1) ||: i가 n-1일 경우에는 오른쪽이 없어서 비교할 필요 없음. 무조건 true;
 
