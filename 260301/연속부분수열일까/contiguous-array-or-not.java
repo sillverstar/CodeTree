@@ -30,6 +30,8 @@ public class Main {
                 for (int j = 0; j < n2; j++) {
                     if (a[i+j] == b[j]) {
                         cnt++;
+                    } else {
+                        cnt = 0;
                     }
                 }
             }
