@@ -9,15 +9,13 @@ public class Main {
         int b = sc.nextInt();
 
 
-        String result = "";
-        for (int i = 0; i < 21; i++) {
-            if (i == 0) {   
-                result += a / b;
-                result += ".";
-            } else {
-                a = (a % b) * 10;
-                result += a / b;
-            }
+        String result = a / b + ".";
+        a %= b;
+        for (int i = 0; i < 20; i++) {
+            a *= 10;
+            result += a / b;
+
+            a %= b;
         }
 
         System.out.printf(result);
